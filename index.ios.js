@@ -14,11 +14,7 @@ import {
   NavigatorIOS,
 } from 'react-native';
 
-class SearchPage extends Component {
-  render() {
-    return <Text style={styles.description}>Search for houses to buy</Text>;
-  }
-}
+import SearchPage from './SearchPage';
 
 class PropertyFinder extends Component {
   render() {

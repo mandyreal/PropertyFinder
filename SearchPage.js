@@ -21,6 +21,16 @@ export default class SearchPage extends Component {
         <Text style={styles.description}>
           Search by place-name or postcode.
         </Text>
+				<View style={styles.flowRight}>
+  				<TextInput
+    				style={styles.searchInput}
+    				placeholder='Search via name or postcode'/>
+  				<Button
+    				onPress={() => {}}
+    				color='#48BBEC'
+    				title='Go'
+  				/>
+				</View>
       </View>
     );
   }

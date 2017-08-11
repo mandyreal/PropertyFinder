@@ -65,4 +65,8 @@ const styles = StyleSheet.create({
 	  borderRadius: 8,
 	  color: '#48BBEC',
 	},
+		image: {
+	  width: 217,
+	  height: 138,
+	},
 });

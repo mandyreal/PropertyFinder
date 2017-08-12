@@ -24,9 +24,21 @@ export default class SearchPage extends Component {
 	  this.setState({ searchString: event.nativeEvent.text });
 	  console.log('Current: '+this.state.searchString+', Next: '+event.nativeEvent.text);
 	};
-	
+
+	_executeQuery = (query) => {
+	  console.log(query);
+	  this.setState({ isLoading: true });
+	};
+
+	_onSearchPressed = () => {
+	  const query = urlForQueryAndPage('place_name', this.state.searchString, 1);
+	  this._executeQuery(query);
+	};
+
   render() {
   	console.log('SearchPage.render');
+  	const spinner = this.state.isLoading ?
+ 		<ActivityIndicator size='large'/> : null;
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
@@ -48,6 +60,7 @@ export default class SearchPage extends Component {
   				/>
 				</View>
 	 	    <Image source={require('./Resources/house.png')} style={styles.image}/>
+	 	    {spinner}
       </View>
      );
   }
